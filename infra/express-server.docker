@@ -19,7 +19,7 @@ RUN chown -R node:node /home/node
 COPY --from=0 /home/node/app/localhost-cert.pem .
 COPY --from=0 /home/node/app/localhost-privkey.pem .
 
-COPY yarn.lock .yarnrc.yml .yarn/ node_modules/ package.json ./
+COPY yarn.lock .yarnrc.yml .yarn/ package.json ./
 
 
 # Cache key changes, so immutable doesn't work
