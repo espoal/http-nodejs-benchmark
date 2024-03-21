@@ -1,0 +1,4 @@
+{
+  "name": "@svcs/http-node",
+  "packageManager": "yarn@4.1.1"
+}

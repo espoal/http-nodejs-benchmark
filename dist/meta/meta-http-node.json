@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "svcs/http-node/index.mts": {
+      "bytes": 340,
+      "imports": [
+        {
+          "path": "node:process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:http",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/http-node/src/index.mjs": {
+      "imports": [
+        {
+          "path": "node:process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:http",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "exports": [],
+      "entryPoint": "svcs/http-node/index.mts",
+      "inputs": {
+        "svcs/http-node/index.mts": {
+          "bytesInOutput": 328
+        }
+      },
+      "bytes": 356
+    }
+  }
+}

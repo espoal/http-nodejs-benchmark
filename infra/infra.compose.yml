@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+
+  http-node:
+    build:
+      dockerfile: ../../infra/server.docker
+      context: ../dist/http-node
+    init: true
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../dist/http-node/src:/home/node/app/src
+      - ../.yarn:/home/http-node/.yarn
+    command: "node src/index.mjs"
+
+  http2-node:
+    build:
+      dockerfile: ../../infra/server.docker
+      context: ../dist/http2-node
+    init: true
+    restart: always
+    ports:
+      - "8081:8080"
+    volumes:
+      - ../dist/http2-node/src:/home/node/app/src
+      - ../.yarn:/home/http2-node/.yarn
+    command: "node src/index.mjs"
+
+  http-express:
+    build:
+      dockerfile: ../../infra/express-server.docker
+      context: ../dist/http-express
+    init: true
+    restart: always
+    ports:
+      - "8082:8080"
+    volumes:
+      - ../dist/http-express/src:/home/node/app/src
+      - ../.yarn:/home/http-express/.yarn
+    command: "yarn node src/index.mjs"

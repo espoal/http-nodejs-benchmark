@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "svcs/http-express/index.mts": {
+      "bytes": 279,
+      "imports": [
+        {
+          "path": "express",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:process",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/http-express/src/index.mjs": {
+      "imports": [
+        {
+          "path": "express",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:process",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "exports": [],
+      "entryPoint": "svcs/http-express/index.mts",
+      "inputs": {
+        "svcs/http-express/index.mts": {
+          "bytesInOutput": 276
+        }
+      },
+      "bytes": 307
+    }
+  }
+}
