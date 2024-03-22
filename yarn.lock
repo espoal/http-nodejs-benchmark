@@ -25,6 +25,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@dist/unix-socket@workspace:dist/unix-socket":
+  version: 0.0.0-use.local
+  resolution: "@dist/unix-socket@workspace:dist/unix-socket"
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.20.1":
   version: 0.20.1
   resolution: "@esbuild/aix-ppc64@npm:0.20.1"
@@ -234,6 +240,12 @@ __metadata:
 "@svcs/http2-node@workspace:svcs/http2-node":
   version: 0.0.0-use.local
   resolution: "@svcs/http2-node@workspace:svcs/http2-node"
+  languageName: unknown
+  linkType: soft
+
+"@svcs/unix-socket@workspace:svcs/unix-socket":
+  version: 0.0.0-use.local
+  resolution: "@svcs/unix-socket@workspace:svcs/unix-socket"
   languageName: unknown
   linkType: soft
 

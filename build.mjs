@@ -20,3 +20,10 @@ buildHelper({
     outDir: 'http-express/src',
     external: ['express'],
 })
+
+buildHelper({
+  name: 'unix socket',
+  entryPoints: ['svcs/unix-socket/index.mts'],
+  outDir: 'unix-socket/src',
+  external: [],
+})
