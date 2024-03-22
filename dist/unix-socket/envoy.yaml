@@ -1,0 +1,35 @@
+static_resources:
+  # Configurations for logically similar upstream hosts, called clusters, that Envoy connects to.
+  # https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/cluster/v3/cluster.proto#envoy-v3-api-msg-config-cluster-v3-cluster
+  clusters:
+    -
+      # Every cluster must have a unique name, which we use for routing.
+      name: service_envoyproxy_io
+      # The LOGICAL_DNS type is suitable for resources that use DNS load-balancing.
+      type: LOGICAL_DNS
+      # The time to wait for a connection before an error is returned.
+      connect_timeout: 500s
+      # A load balancing policy for endpoints/hosts in the cluster.
+      # https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/endpoint/v3/endpoint.proto#envoy-v3-api-msg-config-endpoint-v3-clusterloadassignment
+      load_assignment:
+        # The cluster name is repeated here.
+        cluster_name: service_envoyproxy_io
+        # The list of endpoints and the locality to load-balance to.
+        # https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/endpoint/v3/endpoint_components.proto#envoy-v3-api-msg-config-endpoint-v3-localitylbendpoints
+        endpoints:
+          # If you have multiple zones or regions, specify them here.
+          # locality: ...
+          # The endpoints associated with the locality.
+          # https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/endpoint/v3/endpoint_components.proto#envoy-v3-api-msg-config-endpoint-v3-lbendpoint
+          lb_endpoints:
+            -
+              # An actual endpoint (which requires more nesting).
+              # https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/endpoint/v3/endpoint_components.proto#envoy-v3-api-msg-config-endpoint-v3-endpoint
+              endpoint:
+                # More nesting until we get to an actual host address.
+                # https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/core/v3/address.proto#envoy-v3-api-msg-config-core-v3-address
+                address:
+                  pipe:
+                    path: /tmp/channel.sock
+              # (Optional) If uneven load balancing is desired, weights can control it.
+              load_balancing_weight: 1

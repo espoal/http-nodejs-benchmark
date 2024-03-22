@@ -1,0 +1,25 @@
+{
+  "name": "http-nodejs-benchmark",
+  "scripts": {
+    "dev:build": "node build.mjs",
+    "dev:infra": "docker compose -f infra/infra.compose.yml up",
+    "dev:clean": "docker compose -f infra/infra.compose.yml down --volumes --remove-orphans",
+    "lint:fix": "biome check --apply-unsafe .",
+    "lint:format": "biome format --write .",
+    "lint:ci": "biome ci ."
+  },
+  "workspaces": [
+    "dist/*",
+    "libs/*",
+    "pkgs/*",
+    "svcs/*",
+    "tests"
+  ],
+  "devDependencies": {
+    "@libs/build": "workspace:*",
+    "@types/express": "4",
+    "@types/node": "20.11.30",
+    "typescript": "5.4.3"
+  },
+  "packageManager": "yarn@4.1.1"
+}
