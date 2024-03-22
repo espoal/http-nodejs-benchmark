@@ -12,3 +12,6 @@ dist/http-express/.yarn/*
 
 #!.yarn/cache
 .pnp.*
+
+#IntelliJ
+.idea
