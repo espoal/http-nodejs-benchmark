@@ -146,14 +146,25 @@ Benchmarking 60 connections @ http://localhost:8090 for 1 minute(s)
 ## Node UDS + Golang HTTP
 
 ```bash
-mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8090 -t 1 -c 10 -d 5s 
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8090 -t 1 -c 1 -d 60s --pct
 Beginning round 1...
-Benchmarking 10 connections @ http://localhost:8090 for 5 second(s)
+Benchmarking 1 connections @ http://localhost:8090 for 1 minute(s)
   Latencies:
     Avg      Stdev    Min      Max      
-    1.15ms   0.17ms   0.12ms   2.07ms   
+    0.10ms   0.02ms   0.04ms   0.66ms   
   Requests:
-    Total:  43384  Req/Sec: 8676.38
+    Total: 628185  Req/Sec: 10469.72
   Transfer:
-    Total: 5.75 MB Transfer Rate: 1.15 MB/Sec
+    Total: 83.27 MB Transfer Rate: 1.39 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     0.31ms      |
+|       99%       |     0.18ms      |
+|       95%       |     0.15ms      |
+|       90%       |     0.14ms      |
+|       75%       |     0.12ms      |
+|       50%       |     0.11ms      |
++ --------------- + --------------- +
+
 ```
