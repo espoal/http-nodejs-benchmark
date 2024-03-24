@@ -113,7 +113,7 @@ Benchmarking 60 connections @ http://localhost:8082 for 1 minute(s)
 + --------------- + --------------- +
 ```
 
-## Golan
+## Golang
 
 ```bash
 mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8090 -t 4 -c 60 -d 60s --pct
