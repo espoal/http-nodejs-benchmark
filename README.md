@@ -1,9 +1,13 @@
 # http-nodejs-benchmark
 
-Several sources tell us that latency hurts 
+Several sources tell us that latency hurts conversion rate: 
+A recent study by [Akamai](https://s3.amazonaws.com/sofist-marketing/State+of+Online+Retail+Performance+Spring+2017+-+Akamai+and+SOASTA+2017.pdf)
+, and corroborated by [Google](https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/load-time-to-conversion-statistics/),
+found that a 100-millisecond delay in website load time can hurt conversion rates by 7%, 
+while one second can hurt conversion rates by 70%.
 
-Simple benchmark for different Node.js HTTP server.
-
+With this in mind we try to measure the overhead of the HTTP protocol in NodeJS, and we propose a novel approach
+based on delegating HTTP termination to an external process, in this case, a Golang binary.
 # Usage
 
 ## Installation    
@@ -33,6 +37,7 @@ Remember to change the port to test different server
 - `8080`: plain http node
 - `8081`: streaming http2 node
 - `8082`: express
+- `8090`: http golang
 
 # Results
 
