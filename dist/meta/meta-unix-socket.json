@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "svcs/unix-socket/index.mts": {
+      "bytes": 733,
+      "imports": [
+        {
+          "path": "node:process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:net",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/unix-socket/src/index.mjs": {
+      "imports": [
+        {
+          "path": "node:process",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "node:net",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "exports": [],
+      "entryPoint": "svcs/unix-socket/index.mts",
+      "inputs": {
+        "svcs/unix-socket/index.mts": {
+          "bytesInOutput": 405
+        }
+      },
+      "bytes": 435
+    }
+  }
+}

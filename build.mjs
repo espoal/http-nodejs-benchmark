@@ -22,7 +22,7 @@ buildHelper({
 })
 
 buildHelper({
-  name: 'unix socket',
+  name: 'unix-socket',
   entryPoints: ['svcs/unix-socket/index.mts'],
   outDir: 'unix-socket/src',
   external: [],
