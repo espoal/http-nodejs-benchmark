@@ -118,6 +118,80 @@ Benchmarking 60 connections @ http://localhost:8082 for 1 minute(s)
 + --------------- + --------------- +
 ```
 
+## bun:http
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8070 -t 4 -c 60 -d 60s --pct
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8070 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    0.62ms   0.14ms   0.07ms   3.84ms   
+  Requests:
+    Total: 5828674 Req/Sec: 97144.61
+  Transfer:
+    Total: 767.09 MB Transfer Rate: 12.78 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     1.73ms      |
+|       99%       |     1.35ms      |
+|       95%       |     1.11ms      |
+|       90%       |     0.97ms      |
+|       75%       |     0.78ms      |
+|       50%       |     0.69ms      |
++ --------------- + --------------- +
+```
+
+## deno:http
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8060 -t 4 -c 60 -d 60s --pct
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8060 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    0.75ms   0.10ms   0.08ms   7.03ms   
+  Requests:
+    Total: 4767452 Req/Sec: 79457.49
+  Transfer:
+    Total: 732.00 MB Transfer Rate: 12.20 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     1.92ms      |
+|       99%       |     1.18ms      |
+|       95%       |     1.01ms      |
+|       90%       |     0.95ms      |
+|       75%       |     0.88ms      |
+|       50%       |     0.82ms      |
++ --------------- + --------------- +
+```
+## deno:http2
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8060 -t 4 -c 60 -d 60s --http2 --pct
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8060 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    1.06ms   0.16ms   0.47ms   44.27ms  
+  Requests:
+    Total: 3406127 Req/Sec: 56768.94
+  Transfer:
+    Total: 159.25 MB Transfer Rate: 2.65 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     2.11ms      |
+|       99%       |     1.52ms      |
+|       95%       |     1.39ms      |
+|       90%       |     1.34ms      |
+|       75%       |     1.22ms      |
+|       50%       |     1.13ms      |
++ --------------- + --------------- +
+```
+
 ## Golang
 
 ```bash
@@ -141,4 +215,30 @@ Benchmarking 60 connections @ http://localhost:8090 for 1 minute(s)
 |       75%       |     0.60ms      |
 |       50%       |     0.50ms      |
 + --------------- + --------------- +
+```
+
+## Node UDS + Golang HTTP
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8090 -t 1 -c 1 -d 60s --pct
+Beginning round 1...
+Benchmarking 1 connections @ http://localhost:8090 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    0.10ms   0.02ms   0.04ms   0.66ms   
+  Requests:
+    Total: 628185  Req/Sec: 10469.72
+  Transfer:
+    Total: 83.27 MB Transfer Rate: 1.39 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     0.31ms      |
+|       99%       |     0.18ms      |
+|       95%       |     0.15ms      |
+|       90%       |     0.14ms      |
+|       75%       |     0.12ms      |
+|       50%       |     0.11ms      |
++ --------------- + --------------- +
+
 ```

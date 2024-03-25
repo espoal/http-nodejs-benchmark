@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "svcs/http-deno/index.mts": {
+      "bytes": 269,
+      "imports": [],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/http-deno/src/index.mjs": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "svcs/http-deno/index.mts",
+      "inputs": {
+        "svcs/http-deno/index.mts": {
+          "bytesInOutput": 244
+        }
+      },
+      "bytes": 272
+    }
+  }
+}

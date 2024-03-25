@@ -5,6 +5,18 @@ __metadata:
   version: 8
   cacheKey: 10
 
+"@dist/go@workspace:dist/go":
+  version: 0.0.0-use.local
+  resolution: "@dist/go@workspace:dist/go"
+  languageName: unknown
+  linkType: soft
+
+"@dist/http-bun@workspace:dist/http-bun":
+  version: 0.0.0-use.local
+  resolution: "@dist/http-bun@workspace:dist/http-bun"
+  languageName: unknown
+  linkType: soft
+
 "@dist/http-express@workspace:dist/http-express":
   version: 0.0.0-use.local
   resolution: "@dist/http-express@workspace:dist/http-express"
@@ -222,6 +234,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@svcs/go@workspace:svcs/go":
+  version: 0.0.0-use.local
+  resolution: "@svcs/go@workspace:svcs/go"
+  languageName: unknown
+  linkType: soft
+
+"@svcs/http-bun@workspace:svcs/http-bun":
+  version: 0.0.0-use.local
+  resolution: "@svcs/http-bun@workspace:svcs/http-bun"
+  languageName: unknown
+  linkType: soft
+
 "@svcs/http-express@workspace:svcs/http-express":
   version: 0.0.0-use.local
   resolution: "@svcs/http-express@workspace:svcs/http-express"
@@ -256,6 +280,15 @@ __metadata:
     "@types/connect": "npm:*"
     "@types/node": "npm:*"
   checksum: 10/1e251118c4b2f61029cc43b0dc028495f2d1957fe8ee49a707fb940f86a9bd2f9754230805598278fe99958b49e9b7e66eec8ef6a50ab5c1f6b93e1ba2aaba82
+  languageName: node
+  linkType: hard
+
+"@types/bun@npm:1.0.10":
+  version: 1.0.10
+  resolution: "@types/bun@npm:1.0.10"
+  dependencies:
+    bun-types: "npm:1.0.33"
+  checksum: 10/003455abf4cb9c52fcc451ae5df93efe927ae9528a85cc00cd4c34760f58072a2b45408ba659857dbc556813def3790df2ee7055d9b547e568ad1f999d4b353a
   languageName: node
   linkType: hard
 
@@ -325,7 +358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.11.30":
+"@types/node@npm:*, @types/node@npm:20.11.30, @types/node@npm:~20.11.3":
   version: 20.11.30
   resolution: "@types/node@npm:20.11.30"
   dependencies:
@@ -366,6 +399,15 @@ __metadata:
     "@types/mime": "npm:*"
     "@types/node": "npm:*"
   checksum: 10/49aa21c367fffe4588fc8c57ea48af0ea7cbadde7418bc53cde85d8bd57fd2a09a293970d9ea86e79f17a87f8adeb3e20da76aab38e1c4d1567931fa15c8af38
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:~8.5.10":
+  version: 8.5.10
+  resolution: "@types/ws@npm:8.5.10"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10/9b414dc5e0b6c6f1ea4b1635b3568c58707357f68076df9e7cd33194747b7d1716d5189c0dbdd68c8d2521b148e88184cf881bac7429eb0e5c989b001539ed31
   languageName: node
   linkType: hard
 
@@ -449,6 +491,16 @@ __metadata:
   dependencies:
     balanced-match: "npm:^1.0.0"
   checksum: 10/a61e7cd2e8a8505e9f0036b3b6108ba5e926b4b55089eeb5550cd04a471fe216c96d4fe7e4c7f995c728c554ae20ddfc4244cad10aef255e72b62930afd233d1
+  languageName: node
+  linkType: hard
+
+"bun-types@npm:1.0.33":
+  version: 1.0.33
+  resolution: "bun-types@npm:1.0.33"
+  dependencies:
+    "@types/node": "npm:~20.11.3"
+    "@types/ws": "npm:~8.5.10"
+  checksum: 10/43c727cfea52ceb469a29af81694a837055bbc539fb0fac1b7ed4e19fa1f1a3f48322cd739de2ed524636abefaedbbc4e80b8c85c7befc2acc14a538498dd042
   languageName: node
   linkType: hard
 
@@ -880,6 +932,7 @@ __metadata:
   resolution: "http-nodejs-benchmark@workspace:."
   dependencies:
     "@libs/build": "workspace:*"
+    "@types/bun": "npm:1.0.10"
     "@types/express": "npm:4"
     "@types/node": "npm:20.11.30"
     typescript: "npm:5.4.3"
