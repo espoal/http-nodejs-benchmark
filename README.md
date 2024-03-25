@@ -6,8 +6,7 @@ A recent study by [Akamai](https://s3.amazonaws.com/sofist-marketing/State+of+On
 found that a 100-millisecond delay in website load time can hurt conversion rates by 7%, 
 while one second can hurt conversion rates by 70%.
 
-With this in mind we try to measure the overhead of the HTTP protocol in NodeJS, and we propose a novel approach
-based on delegating HTTP termination to an external process, in this case, a Golang binary.
+With this in mind we try to measure the overhead of the HTTP protocol in NodeJS, Deno and Bun, using golang and Rust as a reference.
 # Usage
 
 ## Installation    
@@ -93,7 +92,7 @@ Benchmarking 60 connections @ http://localhost:8081 for 1 minute(s)
 
 ```
 
-## express
+## node:express
 
 ```bash
 mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8082 -t 4 -c 60 -d 60s --pct
@@ -192,6 +191,7 @@ Benchmarking 60 connections @ http://localhost:8060 for 1 minute(s)
 |       50%       |     0.82ms      |
 + --------------- + --------------- +
 ```
+
 ## deno:http2
 
 ```bash
@@ -214,6 +214,31 @@ Benchmarking 60 connections @ http://localhost:8060 for 1 minute(s)
 |       90%       |     1.34ms      |
 |       75%       |     1.22ms      |
 |       50%       |     1.13ms      |
++ --------------- + --------------- +
+```
+
+## deno:express
+
+```bash 
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8080 -t 4 -c 60 -d 60s --pct 
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8080 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    3.82ms   0.70ms   2.57ms   20.26ms  
+  Requests:
+    Total: 943381  Req/Sec: 15722.98
+  Transfer:
+    Total: 193.43 MB Transfer Rate: 3.22 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     10.57ms     |
+|       99%       |     8.58ms      |
+|       95%       |     5.91ms      |
+|       90%       |     5.22ms      |
+|       75%       |     4.57ms      |
+|       50%       |     4.23ms      |
 + --------------- + --------------- +
 ```
 
