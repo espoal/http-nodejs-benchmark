@@ -143,6 +143,31 @@ Benchmarking 60 connections @ http://localhost:8070 for 1 minute(s)
 + --------------- + --------------- +
 ```
 
+## bun:express
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8080 -t 4 -c 60 -d 60s --pct 
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8080 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    3.36ms   0.77ms   0.26ms   20.48ms  
+  Requests:
+    Total: 1071588 Req/Sec: 17859.75
+  Transfer:
+    Total: 196.21 MB Transfer Rate: 3.27 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     10.00ms     |
+|       99%       |     7.30ms      |
+|       95%       |     5.69ms      |
+|       90%       |     5.05ms      |
+|       75%       |     4.44ms      |
+|       50%       |     3.86ms      |
++ --------------- + --------------- +
+```
+
 ## deno:http
 
 ```bash
