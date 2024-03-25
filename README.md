@@ -242,3 +242,28 @@ Benchmarking 1 connections @ http://localhost:8090 for 1 minute(s)
 + --------------- + --------------- +
 
 ```
+
+## Rust:actix-web
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8050/app/index -t 4 -c 60 -d 60s --pct 
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8050/app/index for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    0.35ms   0.11ms   0.03ms   5.85ms   
+  Requests:
+    Total: 10378027 Req/Sec: 172966.58
+  Transfer:
+    Total: 1.43 GB Transfer Rate: 24.41 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     0.82ms      |
+|       99%       |     0.66ms      |
+|       95%       |     0.58ms      |
+|       90%       |     0.54ms      |
+|       75%       |     0.49ms      |
+|       50%       |     0.43ms      |
++ --------------- + --------------- +
+```
