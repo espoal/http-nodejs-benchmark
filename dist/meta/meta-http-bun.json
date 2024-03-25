@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "svcs/http-bun/server.mts": {
+      "bytes": 100,
+      "imports": [],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/http-bun/src/server.mjs": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "svcs/http-bun/server.mts",
+      "inputs": {
+        "svcs/http-bun/server.mts": {
+          "bytesInOutput": 100
+        }
+      },
+      "bytes": 128
+    }
+  }
+}

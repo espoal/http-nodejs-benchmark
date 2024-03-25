@@ -22,6 +22,20 @@ buildHelper({
 })
 
 buildHelper({
+  name: 'http-bun',
+  entryPoints: ['svcs/http-bun/server.mts'],
+  outDir: 'http-bun/src',
+  external: [],
+})
+
+buildHelper({
+  name: 'http-deno',
+  entryPoints: ['svcs/http-deno/index.mts'],
+  outDir: 'http-deno/src',
+  external: [],
+})
+
+buildHelper({
   name: 'unix-socket',
   entryPoints: ['svcs/unix-socket/index.mts'],
   outDir: 'unix-socket/src',
