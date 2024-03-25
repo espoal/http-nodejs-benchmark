@@ -167,6 +167,30 @@ Benchmarking 60 connections @ http://localhost:8060 for 1 minute(s)
 |       50%       |     0.82ms      |
 + --------------- + --------------- +
 ```
+## deno:http2
+
+```bash
+mamluk@mamluk-desktop:~/Projects/generic/rewrk/rewrk/target/release$ ./rewrk -h http://localhost:8060 -t 4 -c 60 -d 60s --http2 --pct
+Beginning round 1...
+Benchmarking 60 connections @ http://localhost:8060 for 1 minute(s)
+  Latencies:
+    Avg      Stdev    Min      Max      
+    1.06ms   0.16ms   0.47ms   44.27ms  
+  Requests:
+    Total: 3406127 Req/Sec: 56768.94
+  Transfer:
+    Total: 159.25 MB Transfer Rate: 2.65 MB/Sec
++ --------------- + --------------- +
+|   Percentile    |   Avg Latency   |
++ --------------- + --------------- +
+|      99.9%      |     2.11ms      |
+|       99%       |     1.52ms      |
+|       95%       |     1.39ms      |
+|       90%       |     1.34ms      |
+|       75%       |     1.22ms      |
+|       50%       |     1.13ms      |
++ --------------- + --------------- +
+```
 
 ## Golang
 
